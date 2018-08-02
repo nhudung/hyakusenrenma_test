@@ -6,30 +6,33 @@
     font-size: 20px
     color: #000
     margin: 30px 0
-  .list-items
+  .list--items
     +display-flex
     +flex-wrap(wrap)
     +justify-content(space-between)
-    .item
+    &--item
       width: 30%
       margin-bottom: 6%
       position: relative
       +box-shadow(0px 3px 16px 0px rgba(0,0,0,0.28))
-      .photo
+      background: $background-white
+      a
+        &:after
+          position: absolute
+          content: ""
+          left: 0
+          top: 0
+          width: 100%
+          height: 100%
+          background: rgba(0,0,0,0.3)
+          transition: all 0.3s
+          height: 130px
+        &:hover
+          &:after
+            background: none
+      &--photo
         height: 130px
         overflow: hidden
-        a
-          &:before
-            @include content-full()
-            z-index: 2
-          &:after
-            @include content-full()
-            background: rgba(0,0,0,0.3)
-            transition: all 0.3s
-            height: 130px
-          &:hover
-            &:after
-              background: none
         .text, .date
           background: #e54e42
           color: #fff
@@ -51,10 +54,9 @@
           height: 50px
           +border-radius(50%)
           padding-top: 13px
-      .info
+      &--info
         padding: 20px
-        background: $background-white
-        .title
+        &--title
           margin-bottom: 20px
           .big-title
             font-size: 24px
@@ -63,22 +65,20 @@
           .small-title
             color: #ff0000
             font-size: 16px
-        .detail
+        &--decription
           margin-top: 20px
           .time
             margin-right: 20px
-          i
-            font-family: "Font Awesome 5 Free"
-            margin-right: 5px
+
       
 @media (max-width: $screen-lg-min)
   .page-sample
-    .list-items
-      .item
+    .list--items
+      &--item
         width: 47%
               
 @media (max-width: $screen-md-min) 
   .page-sample
-    .list-items
-      .item
+    .list--items
+      &--item
         width: 100%
