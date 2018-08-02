@@ -1,0 +1,340 @@
+@charset "UTF-8";
+/* COMPASS
+ * ----------------------------------------------- */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+
+html {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle;
+}
+
+q, blockquote {
+  quotes: none;
+}
+q:before, q:after, blockquote:before, blockquote:after {
+  content: "";
+  content: none;
+}
+
+a img {
+  border: none;
+}
+
+article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
+  display: block;
+}
+
+/* BASE
+ * ----------------------------------------------- */
+/* ADDITIONAL RESET
+ * ----------------------------------------------- */
+*,
+*:before,
+*:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+body * {
+  max-height: 99999em;
+}
+
+body img {
+  max-height: none;
+  max-width: 100%;
+  display: inline-block;
+  vertical-align: top;
+}
+
+input,
+label,
+select,
+button,
+textarea {
+  margin: 0;
+  border: 0;
+  padding: 0;
+  display: inline-block;
+  vertical-align: middle;
+  white-space: normal;
+  background: none;
+  line-height: 1;
+  font: inherit;
+}
+
+input:focus,
+button:focus,
+select:focus {
+  outline: 0;
+}
+
+/* Make webkit render the search input like a normal text field */
+input[type=search] {
+  -webkit-appearance: textfield;
+}
+
+/* Turn off the recent search for webkit. It adds about 15px padding on the left */
+::-webkit-search-decoration {
+  display: none;
+}
+
+/* Turn off scroll bars in IE unless needed */
+textarea {
+  overflow: auto;
+}
+
+/* GENERAL
+ * ----------------------------------------------- */
+body {
+  color: #929292;
+  font-family: "Montserrat", "メイリオ", Meiryo, Verdana, sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.5;
+  background: #f2f2f2;
+  -webkit-text-size-adjust: none;
+  -moz-text-size-adjust: none;
+  -ms-text-size-adjust: none;
+}
+
+/* HELPERS
+ * ----------------------------------------------- */
+a {
+  color: #929292;
+  text-decoration: none;
+}
+
+.trans {
+  filter: progid:DXImageTransform.Microsoft.Alpha(enabled=false);
+  opacity: 1;
+  -moz-transition: opacity 0.26s ease;
+  -o-transition: opacity 0.26s ease;
+  -webkit-transition: opacity 0.26s ease;
+  transition: opacity 0.26s ease;
+}
+.trans:hover {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=80);
+  opacity: 0.8;
+}
+
+.hidden {
+  display: none;
+}
+
+.invisible {
+  visibility: hidden;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.text-justify {
+  text-align: justify;
+  text-justify: distribute;
+}
+
+.text-nowrap {
+  white-space: nowrap;
+}
+
+.text-lowercase {
+  text-transform: lowercase;
+}
+
+.text-uppercase {
+  text-transform: uppercase;
+}
+
+.text-capitalize {
+  text-transform: capitalize;
+}
+
+.container {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 15px;
+}
+
+/* RESPONSIVE
+ * ----------------------------------------------- */
+@media (min-width: 576px) {
+  .container {
+    max-width: 540px;
+  }
+}
+@media (min-width: 768px) {
+  .container {
+    max-width: 720px;
+  }
+}
+@media (min-width: 992px) {
+  .container {
+    max-width: 960px;
+  }
+}
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1140px;
+  }
+}
+/* PAGES
+ * ----------------------------------------------- */
+.page-sample .title-sec {
+  text-align: center;
+  font-weight: bold;
+  font-size: 20px;
+  color: #000;
+  margin: 30px 0;
+}
+.page-sample .list-items {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-justify-content: space-between;
+  justify-content: space-between;
+}
+.page-sample .list-items .item {
+  width: 30%;
+  margin-bottom: 6%;
+  position: relative;
+  -moz-box-shadow: 0px 3px 16px 0px rgba(0, 0, 0, 0.28);
+  -webkit-box-shadow: 0px 3px 16px 0px rgba(0, 0, 0, 0.28);
+  box-shadow: 0px 3px 16px 0px rgba(0, 0, 0, 0.28);
+}
+.page-sample .list-items .item .photo {
+  height: 130px;
+  overflow: hidden;
+}
+.page-sample .list-items .item .photo a:before {
+  position: absolute;
+  content: "";
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+}
+.page-sample .list-items .item .photo a:after {
+  position: absolute;
+  content: "";
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.3);
+  transition: all 0.3s;
+  height: 130px;
+}
+.page-sample .list-items .item .photo a:hover:after {
+  background: none;
+}
+.page-sample .list-items .item .photo .text, .page-sample .list-items .item .photo .date {
+  background: #e54e42;
+  color: #fff;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1;
+  text-align: center;
+  z-index: 1;
+}
+.page-sample .list-items .item .photo .text {
+  position: absolute;
+  left: 0;
+  top: 98px;
+  padding: 10px;
+}
+.page-sample .list-items .item .photo .date {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  width: 50px;
+  height: 50px;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+  padding-top: 13px;
+}
+.page-sample .list-items .item .info {
+  padding: 20px;
+  background: #fff;
+}
+.page-sample .list-items .item .info .title {
+  margin-bottom: 20px;
+}
+.page-sample .list-items .item .info .title .big-title {
+  font-size: 24px;
+  font-weight: bold;
+  color: #000;
+}
+.page-sample .list-items .item .info .title .small-title {
+  color: #ff0000;
+  font-size: 16px;
+}
+.page-sample .list-items .item .info .detail {
+  margin-top: 20px;
+}
+.page-sample .list-items .item .info .detail .time {
+  margin-right: 20px;
+}
+.page-sample .list-items .item .info .detail i {
+  font-family: "Font Awesome 5 Free";
+  margin-right: 5px;
+}
+
+@media (max-width: 992px) {
+  .page-sample .list-items .item {
+    width: 47%;
+  }
+}
+@media (max-width: 768px) {
+  .page-sample .list-items .item {
+    width: 100%;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */
